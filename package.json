@@ -1,5 +1,5 @@
 {
-  "name": "bitebuddy",
+  "name": "snackhop",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "import-db": "mysql -u root -p1234 < bitebuddy.sql"
+    "import-db": "mysql -u root -p1234 < snackhop.sql"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",

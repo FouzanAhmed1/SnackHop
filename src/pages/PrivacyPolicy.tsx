@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
         <div className="p-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Introduction</h2>
           <p className="text-gray-700 mb-4">
-            At BiteBuddy, we value your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use our platform. By using our services, you agree to the collection and use of your data in accordance with this policy.
+            At SnackHop, we value your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use our platform. By using our services, you agree to the collection and use of your data in accordance with this policy.
           </p>
 
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Information We Collect</h2>
@@ -42,7 +42,7 @@ const PrivacyPolicy = () => {
 
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Contact Us</h2>
           <p className="text-gray-700">
-            If you have any questions about this Privacy Policy or our data practices, please contact us at support@bitebuddy.com.
+            If you have any questions about this Privacy Policy or our data practices, please contact us at support@snackhop.com.
           </p>
         </div>
       </div>

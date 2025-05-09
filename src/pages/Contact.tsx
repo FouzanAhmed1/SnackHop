@@ -41,7 +41,7 @@ export default function Contact() {
                     <Mail className="w-6 h-6 text-yellow-500 mr-4" />
                     <div>
                       <h3 className="font-medium">Email</h3>
-                      <p className="text-gray-600">support@bitebuddy.com</p>
+                      <p className="text-gray-600">support@snackhop.com</p>
                     </div>
                   </div>
                   <div className="flex items-start">

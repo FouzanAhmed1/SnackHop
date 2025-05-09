@@ -39,7 +39,7 @@ export default function Navbar() {
             <Link to="/" className="flex items-center">
               <Utensils className="h-8 w-8 text-yellow-500" />
               <span className="ml-2 text-xl font-bold text-gray-800">
-                BiteBuddy
+                SnackHop
               </span>
             </Link>
 

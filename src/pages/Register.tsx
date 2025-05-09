@@ -46,7 +46,7 @@ export default function Register() {
 
   return (
     <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
-      <h2 className="text-2xl font-bold text-center mb-6">Register for BiteBuddy</h2>
+      <h2 className="text-2xl font-bold text-center mb-6">Register for SnackHop</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
       <div>
           <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
