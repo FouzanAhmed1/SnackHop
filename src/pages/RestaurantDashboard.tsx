@@ -12,8 +12,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { useAuth } from "../contexts/AuthContext";
-import { restaurants as restaurantsApi } from "../lib/api";
-import { support as supportsApi } from "../lib/api";
+import { restaurants as restaurantsApi, support as supportsApi } from "../lib/api";
 
 interface MenuItem {
   id: number;
@@ -144,7 +143,7 @@ export default function RestaurantDashboard() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
       </div>
     );
   }
@@ -158,7 +157,7 @@ export default function RestaurantDashboard() {
               <h3 className="text-xl font-semibold">Menu Items</h3>
               <button
                 onClick={() => setEditingMenuItem(null)}
-                className="flex items-center text-yellow-500 hover:text-yellow-600"
+                className="flex items-center text-orange-500 hover:text-orange-600"
               >
                 <PlusCircle className="h-5 w-5 mr-1" />
                 Add Item
@@ -196,7 +195,7 @@ export default function RestaurantDashboard() {
                             name: e.target.value,
                           })
                     }
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                     required
                   />
                 </div>
@@ -222,7 +221,7 @@ export default function RestaurantDashboard() {
                             category: e.target.value,
                           })
                     }
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                     required
                   />
                 </div>
@@ -248,7 +247,7 @@ export default function RestaurantDashboard() {
                             price: parseFloat(e.target.value),
                           })
                     }
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                     required
                     min="0"
                     step="0.01"
@@ -276,7 +275,7 @@ export default function RestaurantDashboard() {
                             description: e.target.value,
                           })
                     }
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                   />
                 </div>
               </div>
@@ -292,7 +291,7 @@ export default function RestaurantDashboard() {
                 )}
                 <button
                   type="submit"
-                  className="px-4 py-2 text-sm font-medium text-white bg-yellow-500 rounded-md hover:bg-yellow-600"
+                  className="px-4 py-2 text-sm font-medium text-white bg-orange-500 rounded-md hover:bg-orange-600"
                 >
                   {editingMenuItem ? "Update Item" : "Add Item"}
                 </button>
@@ -307,7 +306,7 @@ export default function RestaurantDashboard() {
                     <div>
                       <h4 className="font-semibold">{item.name}</h4>
                       <p className="text-gray-600">{item.description}</p>
-                      <p className="text-yellow-500 font-semibold">
+                      <p className="text-orange-500 font-semibold">
                         ${Number(item.price).toFixed(2)}
                       </p>
                       <p className="text-sm text-gray-500">{item.category}</p>
@@ -315,7 +314,7 @@ export default function RestaurantDashboard() {
                     <div className="flex space-x-2">
                       <button
                         onClick={() => setEditingMenuItem(item)}
-                        className="text-gray-600 hover:text-yellow-500"
+                        className="text-gray-600 hover:text-orange-500"
                       >
                         <Edit2 className="h-5 w-5" />
                       </button>
@@ -414,7 +413,7 @@ export default function RestaurantDashboard() {
                             order.status === "completed"
                               ? "bg-green-100 text-green-800"
                               : order.status === "pending"
-                              ? "bg-yellow-100 text-yellow-800"
+                              ? "bg-orange-100 text-orange-800"
                               : "bg-gray-100 text-gray-800"
                           }`}
                         >
@@ -479,7 +478,7 @@ export default function RestaurantDashboard() {
                               ? "bg-green-100 text-green-800"
                               : reservation.status === "cancelled"
                               ? "bg-red-100 text-red-800"
-                              : "bg-yellow-100 text-yellow-800"
+                              : "bg-orange-100 text-orange-800"
                           }`}
                         >
                           {reservation.status}
@@ -510,7 +509,7 @@ export default function RestaurantDashboard() {
                       onChange={(e) =>
                         setProfile({ ...profile, name: e.target.value })
                       }
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                       required
                     />
                   </div>
@@ -524,7 +523,7 @@ export default function RestaurantDashboard() {
                       onChange={(e) =>
                         setProfile({ ...profile, cuisines: e.target.value })
                       }
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                       required
                     />
                   </div>
@@ -541,7 +540,7 @@ export default function RestaurantDashboard() {
                           costForTwo: parseInt(e.target.value),
                         })
                       }
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                       required
                     />
                   </div>
@@ -558,7 +557,7 @@ export default function RestaurantDashboard() {
                           deliveryTime: parseInt(e.target.value),
                         })
                       }
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                       required
                     />
                   </div>
@@ -572,7 +571,7 @@ export default function RestaurantDashboard() {
                       onChange={(e) =>
                         setProfile({ ...profile, address: e.target.value })
                       }
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                       required
                     />
                   </div>
@@ -586,7 +585,7 @@ export default function RestaurantDashboard() {
                       onChange={(e) =>
                         setProfile({ ...profile, city: e.target.value })
                       }
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                       required
                     />
                   </div>
@@ -600,7 +599,7 @@ export default function RestaurantDashboard() {
                       onChange={(e) =>
                         setProfile({ ...profile, area: e.target.value })
                       }
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                       required
                     />
                   </div>
@@ -608,7 +607,7 @@ export default function RestaurantDashboard() {
                 <div className="flex justify-end">
                   <button
                     type="submit"
-                    className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600"
+                    className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600"
                   >
                     Save Changes
                   </button>
@@ -659,7 +658,7 @@ export default function RestaurantDashboard() {
               onClick={() => setActiveTab("menu")}
               className={`w-full flex items-center px-4 py-2 text-sm font-medium rounded-md ${
                 activeTab === "menu"
-                  ? "bg-yellow-100 text-yellow-700"
+                  ? "bg-orange-100 text-orange-700"
                   : "text-gray-600 hover:bg-gray-50"
               }`}
             >
@@ -670,7 +669,7 @@ export default function RestaurantDashboard() {
               onClick={() => setActiveTab("orders")}
               className={`w-full flex items-center px-4 py-2 text-sm font-medium rounded-md ${
                 activeTab === "orders"
-                  ? "bg-yellow-100 text-yellow-700"
+                  ? "bg-orange-100 text-orange-700"
                   : "text-gray-600 hover:bg-gray-50"
               }`}
             >
@@ -681,7 +680,7 @@ export default function RestaurantDashboard() {
               onClick={() => setActiveTab("reservations")}
               className={`w-full flex items-center px-4 py-2 text-sm font-medium rounded-md ${
                 activeTab === "reservations"
-                  ? "bg-yellow-100 text-yellow-700"
+                  ? "bg-orange-100 text-orange-700"
                   : "text-gray-600 hover:bg-gray-50"
               }`}
             >
@@ -692,7 +691,7 @@ export default function RestaurantDashboard() {
               onClick={() => setActiveTab("settings")}
               className={`w-full flex items-center px-4 py-2 text-sm font-medium rounded-md ${
                 activeTab === "settings"
-                  ? "bg-yellow-100 text-yellow-700"
+                  ? "bg-orange-100 text-orange-700"
                   : "text-gray-600 hover:bg-gray-50"
               }`}
             >
@@ -703,7 +702,7 @@ export default function RestaurantDashboard() {
               onClick={() => setActiveTab("support")}
               className={`w-full flex items-center px-4 py-2 text-sm font-medium rounded-md ${
                 activeTab === "support"
-                  ? "bg-yellow-100 text-yellow-700"
+                  ? "bg-orange-100 text-orange-700"
                   : "text-gray-600 hover:bg-gray-50"
               }`}
             >

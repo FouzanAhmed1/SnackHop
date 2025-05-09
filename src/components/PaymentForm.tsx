@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
 import {
+  AddressElement,
   PaymentElement,
-  useStripe,
   useElements,
-  AddressElement
+  useStripe
 } from '@stripe/react-stripe-js';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { orders as ordersApi } from '../lib/api';
 
@@ -124,7 +124,7 @@ export default function PaymentForm({ clientSecret, orderId, amount, onSuccess }
         <button
           type="submit"
           disabled={isProcessing || !stripe || !elements}
-          className="bg-yellow-500 text-white py-3 px-6 rounded-md hover:bg-yellow-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
+          className="bg-orange-500 text-white py-3 px-6 rounded-md hover:bg-orange-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
         >
           {isProcessing ? (
             <>
@@ -142,7 +142,7 @@ export default function PaymentForm({ clientSecret, orderId, amount, onSuccess }
           message.includes("succeeded") 
             ? "bg-green-50 text-green-700" 
             : message.includes("processing")
-              ? "bg-yellow-50 text-yellow-700"
+              ? "bg-orange-50 text-orange-700"
               : "bg-red-50 text-red-700"
         }`}>
           {message}

@@ -1,4 +1,5 @@
 import { Toaster } from "react-hot-toast";
+import { Provider } from "react-redux";
 import {
   Navigate,
   Route,
@@ -10,7 +11,6 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { CartProvider } from "./contexts/CartContext";
-import { Provider } from "react-redux";
 
 // Pages
 import AboutUs from "./pages/AboutUs";
@@ -24,8 +24,8 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import RestaurantDashboard from "./pages/RestaurantDashboard";
 import RestaurantDetail from "./pages/RestaurantDetail";
-import appStore from "./utils/appStore";
 import SupportForm from "./pages/SupportForm";
+import appStore from "./utils/appStore";
 
 // Protected Route Component
 const ProtectedRoute = ({ children, allowedRoles = [] }) => {
@@ -34,7 +34,7 @@ const ProtectedRoute = ({ children, allowedRoles = [] }) => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
       </div>
     );
   }

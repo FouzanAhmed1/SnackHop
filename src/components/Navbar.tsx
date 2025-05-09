@@ -21,8 +21,8 @@ export default function Navbar() {
 
   const isActive = (path: string) => {
     return location.pathname === path
-      ? "text-yellow-500"
-      : "text-gray-700 hover:text-yellow-500";
+      ? "text-orange-500"
+      : "text-gray-700 hover:text-orange-500";
   };
 
   const toTitleCase = (str: string) =>
@@ -32,12 +32,12 @@ export default function Navbar() {
     );
 
   return (
-    <nav className="bg-yellow-50 shadow-lg sticky top-0 z-50">
+    <nav className="bg-orange-50 shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16">
           <div className="flex items-center space-x-8">
             <Link to="/" className="flex items-center">
-              <Utensils className="h-8 w-8 text-yellow-500" />
+              <Utensils className="h-8 w-8 text-orange-500" />
               <span className="ml-2 text-xl font-bold text-gray-800">
                 SnackHop
               </span>
@@ -88,7 +88,7 @@ export default function Navbar() {
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center text-gray-700 hover:text-yellow-500"
+                  className="flex items-center text-gray-700 hover:text-orange-500"
                 >
                   <LogOut className="h-5 w-5 mr-1" />
                   <span>Logout</span>
@@ -106,7 +106,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   to="/register"
-                  className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600"
+                  className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600"
                 >
                   Register
                 </Link>

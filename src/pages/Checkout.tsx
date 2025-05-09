@@ -1,11 +1,14 @@
 // src/pages/Checkout.tsx
-import { ArrowLeft, Minus, Plus, ShoppingBag, Trash2, CreditCard } from "lucide-react";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import { ArrowLeft, CreditCard, Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import PaymentForm from "../components/PaymentForm";
 import { useAuth } from "../contexts/AuthContext";
 import { orders as ordersApi, restaurants as restaurantsApi } from "../lib/api";
-import { useDispatch, useSelector } from "react-redux";
 import {
   addItem,
   clearCart,
@@ -13,9 +16,6 @@ import {
   removeItem,
   selectCartTotal,
 } from "../utils/cartSlice";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import PaymentForm from "../components/PaymentForm";
 
 // Initialize Stripe
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
@@ -180,7 +180,7 @@ export default function Checkout() {
       <div className="mb-8">
         <Link
           to="/"
-          className="flex items-center text-gray-600 hover:text-yellow-500"
+          className="flex items-center text-gray-600 hover:text-orange-500"
         >
           <ArrowLeft className="h-5 w-5 mr-2" />
           Continue Shopping
@@ -198,7 +198,7 @@ export default function Checkout() {
           </p>
           <Link
             to="/"
-            className="bg-yellow-500 text-white py-3 px-6 rounded-md hover:bg-yellow-600 transition-colors"
+            className="bg-orange-500 text-white py-3 px-6 rounded-md hover:bg-orange-600 transition-colors"
           >
             Browse Restaurants
           </Link>
@@ -241,7 +241,7 @@ export default function Checkout() {
                   >
                     <div className="flex-1">
                       <h3 className="font-medium">{item.name}</h3>
-                      <p className="text-yellow-500">
+                      <p className="text-orange-500">
                         ${(item.price / 30).toFixed(2)}
                       </p>
                     </div>
@@ -306,7 +306,7 @@ export default function Checkout() {
                         <p className="text-sm text-gray-600">
                           {item.description}
                         </p>
-                        <p className="text-yellow-500">${item.price}</p>
+                        <p className="text-orange-500">${item.price}</p>
                       </div>
                       <button
                         onClick={() => {
@@ -319,7 +319,7 @@ export default function Checkout() {
                           });
                           toast.success(`${item.name} added to cart`);
                         }}
-                        className="p-2 bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition-colors"
+                        className="p-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors"
                       >
                         <ShoppingBag className="h-5 w-5" />
                       </button>
@@ -360,7 +360,7 @@ export default function Checkout() {
                   <button
                     onClick={initiatePayment}
                     disabled={processingPayment}
-                    className="w-full bg-yellow-500 text-white py-3 px-4 rounded-md hover:bg-yellow-600 transition-colors disabled:opacity-50 flex items-center justify-center"
+                    className="w-full bg-orange-500 text-white py-3 px-4 rounded-md hover:bg-orange-600 transition-colors disabled:opacity-50 flex items-center justify-center"
                   >
                     {processingPayment ? (
                       <>

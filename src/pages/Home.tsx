@@ -62,7 +62,7 @@ export default function Home() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="flex-1 px-6 py-3 focus:outline-none"
                 />
-                <button className="bg-yellow-500 text-white px-6 py-3 flex items-center">
+                <button className="bg-orange-500 text-white px-6 py-3 flex items-center">
                   <Search className="h-5 w-5" />
                 </button>
               </div>
@@ -103,7 +103,7 @@ export default function Home() {
                   <p className="text-gray-600 mb-2">{restaurant.cuisine || 'Various Cuisines'}</p>
                   <div className="flex items-center text-sm text-gray-500 space-x-3">
                     <div className="flex items-center">
-                      <Star className="h-4 w-4 text-yellow-400 mr-1" />
+                      <Star className="h-4 w-4 text-orange-400 mr-1" />
                       <span>{restaurant.rating || '4.5'}</span>
                     </div>
                     <div className="flex items-center">

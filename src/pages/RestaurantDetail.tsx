@@ -1,22 +1,22 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { format } from "date-fns";
 import {
-  Calendar,
-  Clock,
-  MapPin,
-  Phone,
-  ShoppingBag,
-  Star,
-  Users,
+    Calendar,
+    Clock,
+    MapPin,
+    Phone,
+    ShoppingBag,
+    Star,
+    Users,
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
+import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import RatingForm from "../components/RatingForm";
 import { useAuth } from "../contexts/AuthContext";
 import { reservations, restaurants as restaurantsApi } from "../lib/api";
-import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
-import RatingForm from "../components/RatingForm";
 
 export default function RestaurantDetail() {
   const { id } = useParams();
@@ -83,7 +83,7 @@ export default function RestaurantDetail() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
       </div>
     );
   }
@@ -130,14 +130,14 @@ export default function RestaurantDetail() {
             <h1 className="text-4xl font-bold mb-2 flex items-center gap-2">
               {restaurant.name}
               {isSponsored && (
-                <span className="bg-yellow-400 text-white text-xs px-2 py-1 rounded uppercase">
+                <span className="bg-orange-400 text-white text-xs px-2 py-1 rounded uppercase">
                   Sponsored
                 </span>
               )}
             </h1>
             <div className="flex items-center space-x-4 text-sm">
               <span className="flex items-center">
-                <Star className="h-5 w-5 text-yellow-400 mr-1" />
+                <Star className="h-5 w-5 text-orange-400 mr-1" />
                 {restaurant.avgRating}
               </span>
               <span className="flex items-center">
@@ -193,7 +193,7 @@ export default function RestaurantDetail() {
                           <p className="text-sm text-gray-600">
                             {item.description}
                           </p>
-                          <p className="font-medium text-yellow-500">
+                          <p className="font-medium text-orange-500">
                             ${(item.price / 30).toFixed(2)}
                           </p>
                         </div>
@@ -203,7 +203,7 @@ export default function RestaurantDetail() {
 
                             toast.success(`${item.name} added to cart`);
                           }}
-                          className="p-2 bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition-colors"
+                          className="p-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors"
                         >
                           <ShoppingBag className="h-5 w-5" />
                         </button>
@@ -221,7 +221,7 @@ export default function RestaurantDetail() {
             <h3 className="text-xl font-bold mb-4">Make a Reservation</h3>
             <button
               onClick={() => setIsReservationModalOpen(true)}
-              className="w-full bg-yellow-500 text-white py-3 px-4 rounded-md hover:bg-yellow-600 transition-colors"
+              className="w-full bg-orange-500 text-white py-3 px-4 rounded-md hover:bg-orange-600 transition-colors"
             >
               Reserve a Table
             </button>
@@ -235,7 +235,7 @@ export default function RestaurantDetail() {
                 onClick={() => {
                   if (id) navigate(`/restaurant/${id}/campaigns`);
                 }}
-                className="w-full border border-yellow-500 text-yellow-600 py-3 px-4 rounded-md hover:bg-yellow-50 transition-colors"
+                className="w-full border border-orange-500 text-orange-600 py-3 px-4 rounded-md hover:bg-orange-50 transition-colors"
               >
                 View Ad Campaigns
               </button>
@@ -314,7 +314,7 @@ export default function RestaurantDetail() {
                             date: e.target.value,
                           })
                         }
-                        className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                        className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                         min={format(new Date(), "yyyy-MM-dd")}
                         required
                       />
@@ -335,7 +335,7 @@ export default function RestaurantDetail() {
                             time: e.target.value,
                           })
                         }
-                        className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                        className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                         required
                       >
                         {Array.from({ length: 14 }, (_, i) => i + 11).map(
@@ -365,7 +365,7 @@ export default function RestaurantDetail() {
                             guests: Number(e.target.value),
                           })
                         }
-                        className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                        className="pl-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                         required
                       >
                         {Array.from({ length: 10 }, (_, i) => i + 1).map(
@@ -391,7 +391,7 @@ export default function RestaurantDetail() {
                           specialRequests: e.target.value,
                         })
                       }
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-200"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200"
                       rows={3}
                       placeholder="Any special requests or dietary requirements?"
                     />
@@ -407,7 +407,7 @@ export default function RestaurantDetail() {
                     </button>
                     <button
                       type="submit"
-                      className="px-4 py-2 text-sm font-medium text-white bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+                      className="px-4 py-2 text-sm font-medium text-white bg-orange-500 rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
                     >
                       Confirm Reservation
                     </button>

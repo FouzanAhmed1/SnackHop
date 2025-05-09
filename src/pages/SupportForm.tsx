@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { restaurants, support } from "../lib/api"; // Import restaurants API too
 
@@ -72,7 +72,7 @@ export default function SupportForm() {
         rows={4}
         required
       />
-      <button className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
+      <button className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">
         Submit
       </button>
     </form>

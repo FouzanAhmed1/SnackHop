@@ -19,7 +19,7 @@ export default function Contact() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8 text-yellow-500">
+        <h1 className="text-4xl font-bold text-center mb-8 text-orange-500">
           Contact Us
         </h1>
 
@@ -31,21 +31,21 @@ export default function Contact() {
                 <h2 className="text-2xl font-semibold mb-6">Get in Touch</h2>
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <Phone className="w-6 h-6 text-yellow-500 mr-4" />
+                    <Phone className="w-6 h-6 text-orange-500 mr-4" />
                     <div>
                       <h3 className="font-medium">Phone</h3>
                       <p className="text-gray-600">+1 (555) 123-4567</p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <Mail className="w-6 h-6 text-yellow-500 mr-4" />
+                    <Mail className="w-6 h-6 text-orange-500 mr-4" />
                     <div>
                       <h3 className="font-medium">Email</h3>
                       <p className="text-gray-600">support@snackhop.com</p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <MapPin className="w-6 h-6 text-yellow-500 mr-4" />
+                    <MapPin className="w-6 h-6 text-orange-500 mr-4" />
                     <div>
                       <h3 className="font-medium">Address</h3>
                       <p className="text-gray-600">
@@ -115,7 +115,7 @@ export default function Contact() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-yellow-500 text-white py-2 px-4 rounded-md hover:bg-yellow-600 transition"
+                    className="w-full bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-600 transition"
                   >
                     Send Message
                   </button>
@@ -127,7 +127,7 @@ export default function Contact() {
 
         {/* FAQ Section */}
         <div className="mt-12">
-          <h2 className="text-2xl font-semibold mb-6 text-yellow-500">
+          <h2 className="text-2xl font-semibold mb-6 text-orange-500">
             Frequently Asked Questions
           </h2>
           <div className="space-y-4">

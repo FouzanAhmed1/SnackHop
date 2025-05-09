@@ -2,14 +2,14 @@
 import { Minus, Plus, ShoppingCart, Trash2, X } from "lucide-react";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { useDispatch, useSelector } from "react-redux";
 import {
   addItem,
+  removeEntireItem,
   removeItem,
   selectCartTotal,
-  removeEntireItem,
 } from "../utils/cartSlice";
 
 export default function Cart() {
@@ -58,7 +58,7 @@ export default function Cart() {
       {/* Cart Button */}
       <button
         onClick={toggleCart}
-        className="fixed bottom-4 right-4 bg-yellow-500 text-white p-3 rounded-full shadow-lg hover:bg-yellow-600 transition-colors z-50"
+        className="fixed bottom-4 right-4 bg-orange-500 text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition-colors z-50"
       >
         <ShoppingCart className="h-6 w-6" />
         {cartItems.length > 0 && (
@@ -101,7 +101,7 @@ export default function Cart() {
                   >
                     <div>
                       <h3 className="font-medium">{item.name}</h3>
-                      <p className="text-yellow-500">
+                      <p className="text-orange-500">
                         ${(item.price / 30).toFixed(2)}
                       </p>
                     </div>
@@ -136,14 +136,14 @@ export default function Cart() {
           <div className="p-4 border-t">
             <div className="flex justify-between items-center mb-4">
               <span className="font-semibold">Total:</span>
-              <span className="font-bold text-yellow-500">
+              <span className="font-bold text-orange-500">
                 ${total.toFixed(2)}
               </span>
             </div>
             <button
               onClick={handleCheckout}
               disabled={!cartItems.length}
-              className="w-full bg-yellow-500 text-white py-3 px-4 rounded-md hover:bg-yellow-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mb-2"
+              className="w-full bg-orange-500 text-white py-3 px-4 rounded-md hover:bg-orange-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mb-2"
             >
               Proceed to Checkout
             </button>

@@ -2,12 +2,12 @@ import { format } from "date-fns";
 import { Calendar, Clock, CreditCard, Trash2, User } from "lucide-react";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
+import { useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import {
   orders as ordersApi,
   reservations as reservationsApi,
 } from "../lib/api";
-import { useLocation } from "react-router-dom";
 
 interface Order {
   id: number;
@@ -81,7 +81,7 @@ export default function Profile() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
       </div>
     );
   }
@@ -139,7 +139,7 @@ export default function Profile() {
                       className={`px-3 py-1 rounded-full text-sm ${
                         order.status === "completed"
                           ? "bg-green-100 text-green-800"
-                          : "bg-yellow-100 text-yellow-800"
+                          : "bg-orange-100 text-orange-800"
                       }`}
                     >
                       {order.status}
@@ -153,7 +153,7 @@ export default function Profile() {
                             ? "bg-green-100 text-green-800"
                             : order.payment_status === "failed"
                             ? "bg-red-100 text-red-800"
-                            : "bg-yellow-100 text-yellow-800"
+                            : "bg-orange-100 text-orange-800"
                         }`}
                       >
                         <CreditCard className="h-3 w-3 mr-1" />
@@ -245,7 +245,7 @@ export default function Profile() {
                     </div>
                     <div className="flex justify-between items-center font-semibold pt-2 border-t border-gray-100">
                       <span>Total</span>
-                      <span className="text-yellow-500">
+                      <span className="text-orange-500">
                         ${totalNum.toFixed(2)}
                       </span>
                     </div>
@@ -269,7 +269,7 @@ export default function Profile() {
                           );
                         }
                       }}
-                      className="bg-yellow-500 text-white py-2 px-4 rounded-md hover:bg-yellow-600 transition-colors w-full"
+                      className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-600 transition-colors w-full"
                     >
                       <CreditCard className="h-4 w-4 inline mr-2" />
                       Retry Payment
@@ -337,7 +337,7 @@ export default function Profile() {
                         ? "bg-green-100 text-green-800"
                         : reservation.status === "cancelled"
                         ? "bg-red-100 text-red-800"
-                        : "bg-yellow-100 text-yellow-800"
+                        : "bg-orange-100 text-orange-800"
                     }`}
                   >
                     {reservation.status}
@@ -373,7 +373,7 @@ export default function Profile() {
               onClick={() => setActiveTab("profile")}
               className={`w-full flex items-center px-4 py-2 text-sm font-medium rounded-md ${
                 activeTab === "profile"
-                  ? "bg-yellow-100 text-yellow-700"
+                  ? "bg-orange-100 text-orange-700"
                   : "text-gray-600 hover:bg-gray-50"
               }`}
             >
@@ -384,7 +384,7 @@ export default function Profile() {
               onClick={() => setActiveTab("orders")}
               className={`w-full flex items-center px-4 py-2 text-sm font-medium rounded-md ${
                 activeTab === "orders"
-                  ? "bg-yellow-100 text-yellow-700"
+                  ? "bg-orange-100 text-orange-700"
                   : "text-gray-600 hover:bg-gray-50"
               }`}
             >
@@ -395,7 +395,7 @@ export default function Profile() {
               onClick={() => setActiveTab("reservations")}
               className={`w-full flex items-center px-4 py-2 text-sm font-medium rounded-md ${
                 activeTab === "reservations"
-                  ? "bg-yellow-100 text-yellow-700"
+                  ? "bg-orange-100 text-orange-700"
                   : "text-gray-600 hover:bg-gray-50"
               }`}
             >
